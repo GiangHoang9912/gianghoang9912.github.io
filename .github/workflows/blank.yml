@@ -1,9 +1,6 @@
 name: Convert Markdown to PDF and DOCX
 
-on:
-  push:
-    paths:
-      - '**.md'
+on: [push]
 
 jobs:
   convert_via_pandoc:
