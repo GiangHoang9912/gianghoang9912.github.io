@@ -1,4 +1,6 @@
-# Nguyễn Hoàng Giang
+# (Nguyễn Hoàng Giang)[gianghoang9912.github.io]
+# (Nguyễn Hoàng Giang html)[gianghoang9912.github.io/release.html]
+# (Nguyễn Hoàng Giang pdf)[gianghoang9912.github.io/release.pdf]
 
 ## Information
 
