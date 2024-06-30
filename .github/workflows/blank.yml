@@ -1,9 +1,6 @@
 name: Convert Markdown
 
-on:
-  push:
-    paths:
-      - 'build/**/*.md'
+on: push
 
 jobs:
   convert_via_pandoc:
