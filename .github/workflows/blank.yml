@@ -16,13 +16,6 @@ jobs:
           echo "TAG_NAME=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
         shell: bash
 
-      - name: Set up JetBrains Mono font
-        run: |
-          mkdir -p $HOME/.fonts
-          cp -r fonts/* $HOME/.fonts/
-          fc-cache -f -v
-        shell: bash
-
       - name: Install XeLaTeX
         run: |
           sudo apt-get -yq update
@@ -55,15 +48,17 @@ jobs:
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: resume
+          name: resume.docx
           path: output/GiangNH_resume.docx
 
       - name: Upload HTML artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: output/GiangNH_resume.pdf
+          name: resume.pdf
+          path: output/GiangNH_resume.pdf
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: output/GiangNH_resume.html
+          name: resume.html
+          path: output/GiangNH_resume.html
