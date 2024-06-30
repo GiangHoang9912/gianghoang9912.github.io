@@ -1,44 +1,43 @@
-name: Build Resume
+name: Convert Markdown to PDF and DOCX
 
 on: [push]
 
 jobs:
-  build:
+  convert_via_pandoc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Create output directories
         run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra make
+          mkdir -p output/pdf
+          mkdir -p output/docx
 
-      - name: Create output directory
-        run: mkdir -p output
-
-      - name: Build HTML
-        run: make html
-
-      - name: Build DOCX
-        run: make docx
-
-      - name: Build PDF
-        run: make pdf
-
-      - name: Upload HTML artifact
-        uses: actions/upload-artifact@v2
+      - name: Convert MD to PDF
+        uses: docker://pandoc/latex:2.9
         with:
-          name: HTML
-          path: output/GiangNH_resume.html
+          args: >-
+            release.md
+            -o output/pdf/output.pdf
+            --pdf-engine=xelatex
 
-      - name: Upload DOCX artifact
-        uses: actions/upload-artifact@v2
+      - name: Convert MD to DOCX
+        uses: docker://pandoc/core:2.9
         with:
-          name: DOCX
-          path: output/GiangNH_resume.docx
+          args: >-
+            release.md
+            -o output/docx/output.docx
 
-      - name: Upload PDF artifact
+      - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: output/GiangNH_resume.pdf
+          path: output/pdf
+          if-no-files-found: warn
+
+      - name: Upload DOCX artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: DOCX
+          path: output/docx
+          if-no-files-found: warn
