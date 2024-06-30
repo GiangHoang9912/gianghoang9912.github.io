@@ -20,24 +20,28 @@ jobs:
         run: |
           md_file=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -E '^build/.*\.md$' | head -n 1)
           echo "::set-output name=md_file::$md_file"
+          echo "Found Markdown file: $md_file"
 
       # Convert .md file to .pdf
       - name: Convert Markdown to PDF
         if: steps.find_md.outputs.md_file != ''
         run: |
           docker run --rm -v ${{ github.workspace }}:/workspace pandoc/core:2.9 /workspace/${{ steps.find_md.outputs.md_file }} -o /workspace/build/output.pdf
+          ls -l /workspace/build/
 
       # Convert .md file to .docx
       - name: Convert Markdown to DOCX
         if: steps.find_md.outputs.md_file != ''
         run: |
           docker run --rm -v ${{ github.workspace }}:/workspace pandoc/core:2.9 /workspace/${{ steps.find_md.outputs.md_file }} -o /workspace/build/output.docx
+          ls -l /workspace/build/
 
       # Convert .md file to HTML
       - name: Convert Markdown to HTML
         if: steps.find_md.outputs.md_file != ''
         run: |
           docker run --rm -v ${{ github.workspace }}:/workspace pandoc/core:2.9 /workspace/${{ steps.find_md.outputs.md_file }} -o /workspace/build/output.html
+          ls -l /workspace/build/
 
       # Upload the artifacts
       - name: Upload converted files
