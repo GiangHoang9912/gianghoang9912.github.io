@@ -15,7 +15,7 @@ jobs:
       - name: Find latest markdown file in build
         id: find_md
         run: |
-          md_file=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -E '^build/.*\.md$' | head -n 1)
+          md_file=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -E '^build/.*\.md$' | head -n 3)
           echo "::set-output name=md_file::$md_file"
           echo "Found Markdown file: $md_file"
 
