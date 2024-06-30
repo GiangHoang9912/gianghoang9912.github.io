@@ -13,8 +13,8 @@ jobs:
 
       - name: Create output directories
         run: |
-          mkdir -p output/pdf
-          mkdir -p output/docx
+          mkdir -p pdf
+          mkdir -p docx
 
       - name: Get changed files
         id: changed-files
@@ -27,18 +27,23 @@ jobs:
         with:
           args: >-
             ${{ steps.changed-files.outputs.all_changed_files }}
-            -o output/pdf/output.pdf
-            -o output/docx/output.docx
+            -o pdf/output.pdf
+            -o docx/output.docx
             --pdf-engine=xelatex
+
+      - name: List output files
+        run: |
+          ls -R pdf
+          ls -R docx
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: output/pdf
+          path: pdf
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
           name: DOCX
-          path: output/docx
+          path: docx
