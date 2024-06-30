@@ -1,43 +1,53 @@
-name: Convert Markdown to Other Formats
+name: Convert Markdown
 
-on: push
+on:
+  push:
+    paths:
+      - '**/*.md'
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
+
     steps:
-      - name: Checkout repository content
+      # Check out the repository to the GitHub Actions runner
+      - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Find the latest .md file
+      - name: Find latest markdown file
+        id: find_md
+        run: |
+          md_file=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -E '\.md$' | head -n 1)
+          echo "::set-output name=md_file::$md_file"
+
+      # Convert .md file to .pdf
       - name: Convert Markdown to PDF
+        if: steps.find_md.outputs.md_file != ''
         uses: docker://pandoc/core:2.9
         with:
-          args: "*.md -o output.pdf"
+          args: "${{ steps.find_md.outputs.md_file }} -o output.pdf"
 
+      # Convert .md file to .docx
       - name: Convert Markdown to DOCX
+        if: steps.find_md.outputs.md_file != ''
         uses: docker://pandoc/core:2.9
         with:
-          args: "*.md -o output.docx"
+          args: "${{ steps.find_md.outputs.md_file }} -o output.docx"
 
+      # Convert .md file to HTML
       - name: Convert Markdown to HTML
+        if: steps.find_md.outputs.md_file != ''
         uses: docker://pandoc/core:2.9
         with:
-          args: "*.md -o output.html"
+          args: "${{ steps.find_md.outputs.md_file }} -o output.html"
 
-      - name: Upload PDF
+      # Upload the artifacts
+      - name: Upload converted files
         uses: actions/upload-artifact@v2
         with:
-          name: output-pdf
-          path: output.pdf
-
-      - name: Upload DOCX
-        uses: actions/upload-artifact@v2
-        with:
-          name: output-docx
-          path: output.docx
-
-      - name: Upload HTML
-        uses: actions/upload-artifact@v2
-        with:
-          name: output-html
-          path: output.html
+          name: converted-files
+          path: |
+            output.pdf
+            output.docx
+            output.html
