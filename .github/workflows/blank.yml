@@ -19,6 +19,11 @@ jobs:
         with:
           files: '**/*.md'
 
+      - name: Debug - List changed files
+        run: |
+          echo "Changed files:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+
       - name: Convert MD to PDF
         uses: docker://pandoc/latex:2.9
         with:
@@ -26,6 +31,14 @@ jobs:
             ${{ steps.changed-files.outputs.all_changed_files }}
             -o output/pdf/output.pdf
             --pdf-engine=xelatex
+            -v
+
+      - name: Debug - Check PDF output
+        run: |
+          echo "PDF directory contents:"
+          ls -l output/pdf
+          echo "PDF file size:"
+          du -h output/pdf/output.pdf || echo "PDF file not found"
 
       - name: Convert MD to DOCX
         uses: docker://pandoc/core:2.9
@@ -34,14 +47,23 @@ jobs:
             ${{ steps.changed-files.outputs.all_changed_files }}
             -o output/docx/output.docx
 
+      - name: Debug - Check DOCX output
+        run: |
+          echo "DOCX directory contents:"
+          ls -l output/docx
+          echo "DOCX file size:"
+          du -h output/docx/output.docx || echo "DOCX file not found"
+
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: output/pdf
+          if-no-files-found: warn
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
           name: DOCX
           path: output/docx
+          if-no-files-found: warn
