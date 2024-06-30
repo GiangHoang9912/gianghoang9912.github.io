@@ -1,6 +1,9 @@
 name: Convert Markdown to PDF and DOCX
 
-on: [push]
+on:
+  push:
+    paths:
+      - '**.md'
 
 jobs:
   convert_via_pandoc:
@@ -13,11 +16,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
 
-
       - name: Create output directories
         run: |
-          mkdir -p output/pdf
-          mkdir -p output/docx
+          mkdir -p pdf
+          mkdir -p docx
 
       - name: Get changed files
         id: changed-files
@@ -25,22 +27,42 @@ jobs:
         with:
           files: '**/*.md'
 
-      - name: Convert MD to PDF and DOCX
-        uses: docker://pandoc/core:2.9
-        with:
-          args: >-
-            ${{ steps.changed-files.outputs.all_changed_files }}
-            -o output/pdf/output.pdf
-            --pdf-engine=xelatex
+      - name: Debug - List changed files
+        run: |
+          echo "Changed files:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+
+      - name: Convert MD to PDF
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            filename=$(basename "$file" .md)
+            pandoc "$file" -o "pdf/${filename}.pdf" --pdf-engine=xelatex || echo "Failed to convert $file to PDF"
+          done
+
+      - name: Convert MD to DOCX
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            filename=$(basename "$file" .md)
+            pandoc "$file" -o "docx/${filename}.docx" || echo "Failed to convert $file to DOCX"
+          done
+
+      - name: Debug - List output files
+        run: |
+          echo "PDF directory contents:"
+          ls -l pdf
+          echo "DOCX directory contents:"
+          ls -l docx
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: output/pdf
+          path: pdf
+          if-no-files-found: warn
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
           name: DOCX
-          path: output/docx
+          path: docx
+          if-no-files-found: warn
