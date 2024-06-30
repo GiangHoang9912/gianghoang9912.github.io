@@ -1,6 +1,7 @@
 # Nguyễn Hoàng Giang
 
 ## Information
+
 - **Date of birth**: 12/09/1999
 - **Address**: Tay mo, Nam Tu Lien, Hanoi, Vietnam
 - **Email**:
@@ -10,9 +11,11 @@
   - [https://github.com/GiangHoang9912](https://github.com/GiangHoang9912)
 
 ## Summary
+
 - I am a software engineer with 4 years of experience in software development. I have experience in developing backend services for web applications, mobile applications, and desktop applications. I have experience working with various technologies such as Nodejs, Python, PHP, ReactJS, VueJS, React Native, ElectronJS, Django, FlaskAPI, FastAPI, Laravel, YII, MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB, Docker, Kubernetes, Jenkins, GitlabCI, GithubAction, AWS, GCP, Azure, OpenAI, Anthropic, LLama, Langchain, Grafana, Prometheus, ELK, CloudWatch, Git, Jira, Confluence, Slack, Trello, Asana. I am looking for a position as a backend engineer or fullstack engineer to develop and maintain backend services for the company's projects.
 
 ## Education
+
 - **University**: FPT University
   - **Major**: Software Engineering
   - **Year of graduation**: 2021
@@ -26,6 +29,7 @@
       | 1   | DDGS - Digital Document Generation System | Project Manager | 5         | Using ERNIE to generate practice tests for FPT Education exams. And using Bert to check duplicate content in the generated documents. | Manage the project, develop and maintain backend services, integrate AI models | Nodejs, PostgresDB, ERNIE, Bert, CloudWatch |
 
 ## Skills
+
 | No. | Skill          | Detail                                                                 |
 | --- | -------------- | ---------------------------------------------------------------------- |
 | 1   | Server         | - Nodejs (ExpressJS, NestJS, KoaJS, ElectronJS)                        |
@@ -44,13 +48,16 @@
 | 8   | Others         | - Git, Jira, Confluence, Slack, Trello, Asana                          |
 
 **Language**:
+
 - **English**: Intermediate (Reading documents, chatting)
 - **Vietnamese**: Native
 
 **Some My Special Projects**:
-- **ChatPDF**: Using AI to generate practice tests for English language exams including IELTS, TOEIC, and the high school graduation exam.
+
+- **ChatPDF**: Using LLM Anthropic to embed from OpenAI GPT3.5 to generate chatbot conversations in PDF format. Using Langchain to check the content of the chatbot conversation.
 
 ## Experience
+
 1. **Company**: React plus
 
    - **Position**: Backend Engineer
