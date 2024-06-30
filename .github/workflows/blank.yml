@@ -1,69 +1,43 @@
-name: Convert Markdown to PDF and DOCX
+name: Convert Markdown to Other Formats
 
-on:
-  push:
-    paths:
-      - '**.md'
-      - '**.yml'
+on: push
 
 jobs:
   convert_via_pandoc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository content
+        uses: actions/checkout@v2
 
-      - name: Install pandoc and LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex
-
-      - name: Create output directories
-        run: |
-          mkdir -p pdf
-          mkdir -p docx
-
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v39
+      - name: Convert Markdown to PDF
+        uses: docker://pandoc/core:2.9
         with:
-          files: '**/*.md'
+          args: "*.md -o output.pdf"
 
-      - name: Debug - List changed files
-        run: |
-          echo "Changed files:"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+      - name: Convert Markdown to DOCX
+        uses: docker://pandoc/core:2.9
+        with:
+          args: "*.md -o output.docx"
 
-      - name: Convert MD to PDF
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            filename=$(basename "$file" .md)
-            pandoc "$file" -o "pdf/${filename}.pdf" --pdf-engine=xelatex || echo "Failed to convert $file to PDF"
-          done
+      - name: Convert Markdown to HTML
+        uses: docker://pandoc/core:2.9
+        with:
+          args: "*.md -o output.html"
 
-      - name: Convert MD to DOCX
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            filename=$(basename "$file" .md)
-            pandoc "$file" -o "docx/${filename}.docx" || echo "Failed to convert $file to DOCX"
-          done
-
-      - name: Debug - List output files
-        run: |
-          echo "PDF directory contents:"
-          ls -l pdf
-          echo "DOCX directory contents:"
-          ls -l docx
-
-      - name: Upload PDF artifacts
+      - name: Upload PDF
         uses: actions/upload-artifact@v2
         with:
-          name: PDF
-          path: pdf
-          if-no-files-found: warn
+          name: output-pdf
+          path: output.pdf
 
-      - name: Upload DOCX artifacts
+      - name: Upload DOCX
         uses: actions/upload-artifact@v2
         with:
-          name: DOCX
-          path: docx
-          if-no-files-found: warn
+          name: output-docx
+          path: output.docx
+
+      - name: Upload HTML
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-html
+          path: output.html
