@@ -25,7 +25,6 @@ jobs:
           args: >-
             ${{ steps.changed-files.outputs.all_changed_files }}
             -o output/pdf/output.pdf
-            -o output/docx/output.docx
             --pdf-engine=xelatex
 
       - name: Upload PDF artifacts
