@@ -30,6 +30,7 @@ jobs:
           args: >-
             ${{ steps.changed-files.outputs.all_changed_files }}
             -o output/pdf/output.pdf
+            --pdf-engine=xelatex
 
       - name: Convert MD to DOCX
         uses: docker://pandoc/core:2.9
