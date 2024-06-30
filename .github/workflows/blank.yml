@@ -1,23 +1,27 @@
-name: Convert Markdown to PDF and DOCX
+name: Build and Deploy Resume
 
-on: [push]
+on: push
 
 jobs:
-  convert_via_pandoc:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Create output directories
+      - name: Set TAG_NAME
+        id: set_tag_name
         run: |
-          mkdir -p output/pdf
-          mkdir -p output/docx
+          echo "TAG_NAME=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        shell: bash
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v39
-        with:
-          files: '**/*.md'
+      - name: Set up JetBrains Mono font
+        run: |
+          mkdir -p $HOME/.fonts
+          cp -r fonts/* $HOME/.fonts/
+          fc-cache -f -v
+        shell: bash
 
       - name: Install XeLaTeX
         run: |
@@ -25,23 +29,41 @@ jobs:
           sudo apt-get -yq install texlive-xetex
         shell: bash
 
-      - name: Convert MD to PDF and DOCX
-        uses: docker://pandoc/core:2.9
+      - name: Set up Pandoc
+        run: |
+          sudo apt-get -yq install pandoc
+        shell: bash
+
+      - name: Build Resume
+        run: |
+          mkdir -p output
+          make all
+
+      - name: Create Tag
+        run: |
+          git tag ${{ env.TAG_NAME }}
+          git push origin ${{ env.TAG_NAME }}
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
         with:
-          args: >-
-            ${{ steps.changed-files.outputs.all_changed_files }}
-            -o output/pdf/output.pdf
-            -o output/docx/output.docx
-            --pdf-engine=xelatex
+          files: output/*
+          token: ${{ secrets.GH_TOKEN }}
+          tag_name: ${{ env.TAG_NAME }}
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: PDF
-          path: output/pdf
+          name: resume
+          path: output/GiangNH_resume.docx
+
+      - name: Upload HTML artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: output/GiangNH_resume.pdf
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: DOCX
-          path: output/docx
+          name: output/GiangNH_resume.html
