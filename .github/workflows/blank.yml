@@ -1,64 +1,53 @@
-name: Build and Deploy Resume
+name: Convert Markdown to PDF and DOCX
 
-on: push
+on: [push]
 
 jobs:
-  build:
+  convert_via_pandoc:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Set TAG_NAME
-        id: set_tag_name
+      - name: Create output directories
         run: |
-          echo "TAG_NAME=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
-        shell: bash
+          mkdir -p output/pdf
+          mkdir -p output/docx
 
-      - name: Install XeLaTeX
-        run: |
-          sudo apt-get -yq update
-          sudo apt-get -yq install texlive-xetex
-        shell: bash
-
-      - name: Set up Pandoc
-        run: |
-          sudo apt-get -yq install pandoc
-        shell: bash
-
-      - name: Build Resume
-        run: |
-          mkdir -p output
-          make all
-
-      - name: Create Tag
-        run: |
-          git tag ${{ env.TAG_NAME }}
-          git push origin ${{ env.TAG_NAME }}
-
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v39
         with:
-          files: output/*
-          token: ${{ secrets.GH_TOKEN }}
-          tag_name: ${{ env.TAG_NAME }}
+          files: '**/*.md'
+
+      - name: Debug - List changed files
+        run: |
+          echo "Changed files:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+
+      - name: Convert MD to PDF
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: >-
+            ${{ steps.changed-files.outputs.all_changed_files }}
+            -o output/pdf/output.pdf
+
+      - name: Convert MD to DOCX
+        uses: docker://pandoc/core:2.9
+        with:
+          args: >-
+            ${{ steps.changed-files.outputs.all_changed_files }}
+            -o output/docx/output.docx
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: resume.docx
-          path: output/GiangNH_resume.docx
-
-      - name: Upload HTML artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: resume.pdf
-          path: output/GiangNH_resume.pdf
+          name: PDF
+          path: output/pdf
+          if-no-files-found: warn
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: resume.html
-          path: output/GiangNH_resume.html
+          name: DOCX
+          path: output/docx
+          if-no-files-found: warn
