@@ -1,0 +1,438 @@
+<!DOCTYPE html><html><head>
+      <title>release</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="nguyễn-hoàng-giang">Nguyễn Hoàng Giang </h1>
+<h2 id="information">Information </h2>
+<ul>
+<li><strong>Date of birth</strong>: 12/09/1999</li>
+<li><strong>Address</strong>: Tay mo, Nam Tu Lien, Hanoi, Vietnam</li>
+<li><strong>Email</strong>:
+<ul>
+<li><a href="mailto:gianghoang.9955@gmail.com">gianghoang.9955@gmail.com</a></li>
+</ul>
+</li>
+<li><strong>Phone</strong>: 0819169868</li>
+<li><strong>Github</strong>:
+<ul>
+<li><a href="https://github.com/GiangHoang9912">https://github.com/GiangHoang9912</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="summary">Summary </h2>
+<ul>
+<li>I am a software engineer with 4 years of experience in software development. I have experience in developing backend services for web applications, mobile applications, and desktop applications. I have experience working with various technologies such as Nodejs, Python, PHP, ReactJS, VueJS, React Native, ElectronJS, Django, FlaskAPI, FastAPI, Laravel, YII, MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB, Docker, Kubernetes, Jenkins, GitlabCI, GithubAction, AWS, GCP, Azure, OpenAI, Anthropic, LLama, Langchain, Grafana, Prometheus, ELK, CloudWatch, Git, Jira, Confluence, Slack, Trello, Asana. I am looking for a position as a backend engineer or fullstack engineer to develop and maintain backend services for the company's projects.</li>
+</ul>
+<h2 id="education">Education </h2>
+<ul>
+<li><strong>University</strong>: FPT University
+<ul>
+<li><strong>Major</strong>: Software Engineering</li>
+<li><strong>Year of graduation</strong>: 2021</li>
+<li><strong>GPA</strong>: 3.0</li>
+<li><strong>Capstone Project</strong>:
+<ul>
+<li><strong>Project Name</strong>: DDGS - Digital Document Generation System</li>
+<li><strong>Description</strong>: Using ERNIE to generate practice tests for FPT Education exams. And using Bert to check duplicate content in the generated documents.<!-- table -->
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Project Name</th>
+<th>Position</th>
+<th>Team size</th>
+<th>Description</th>
+<th>My Responsibilities</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>DDGS - Digital Document Generation System</td>
+<td>Project Manager</td>
+<td>5</td>
+<td>Using ERNIE to generate practice tests for FPT Education exams. And using Bert to check duplicate content in the generated documents.</td>
+<td>Manage the project, develop and maintain backend services, integrate AI models</td>
+<td>Nodejs, PostgresDB, ERNIE, Bert, CloudWatch</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="skills">Skills </h2>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Skill</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Server</td>
+<td>- Nodejs (ExpressJS, NestJS, KoaJS, ElectronJS)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- Python (Django, FlaskAPI, FastAPI)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- PHP (Laravel, YII)</td>
+</tr>
+<tr>
+<td></td>
+<td>Other Language</td>
+<td>- Java, C#, Rust (Tauri)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Client</td>
+<td>- ReactJS, VueJS, React Native</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- HTML, CSS, Javascript</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Database</td>
+<td>- MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DevOps</td>
+<td>- Docker, Kubernetes, Jenkins, GitlabCI, GithubAction</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cloud</td>
+<td>- AWS (EC2, S3, RDS, Lambda, API Gateway, CloudFront, ESE, DocumentDb)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- GCP (Compute Engine, Cloud Storage, Google map platform)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>- Azure (Virtual Machine, Blob Storage, Function App, OpenAI)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AI</td>
+<td>- OpenAI, Anthropic, LLama, Langchain</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Monitoring</td>
+<td>- Grafana, Prometheus, ELK, CloudWatch</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Others</td>
+<td>- Git, Jira, Confluence, Slack, Trello, Asana</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Language</strong>:</p>
+<ul>
+<li><strong>English</strong>: Intermediate (Reading documents, chatting)</li>
+<li><strong>Vietnamese</strong>: Native</li>
+</ul>
+<p><strong>Some My Special Projects</strong>:</p>
+<ul>
+<li><strong>ChatPDF</strong>: Using LLM Anthropic to embed from OpenAI GPT3.5 to generate chatbot conversations in PDF format. Using Langchain to check the content of the chatbot conversation.</li>
+</ul>
+<h2 id="experience">Experience </h2>
+<ol>
+<li>
+<p><strong>Company</strong>: React plus</p>
+<ul>
+<li><strong>Position</strong>: Backend Engineer</li>
+<li><strong>Time</strong>: 11/2023 - Present</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Develop and maintain backend services for the company's projects.</li>
+<li>Participate in the design and implementation of the company's projects.</li>
+<li>Work with the frontend team to integrate the frontend and backend.
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Project Name</th>
+<th>Position</th>
+<th>Team size</th>
+<th>Description</th>
+<th>My Responsibilities</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Nishibori</td>
+<td>Backend Leader</td>
+<td>11</td>
+<td>- This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital.</td>
+<td>Develop and maintain backend services, integrate AI models into the backend</td>
+<td>NestJS, PostgresDB, OpenAI, CloudWatch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Upshare</td>
+<td>Backend Leader</td>
+<td>7</td>
+<td>- This is a product similar to Google Drive, designed for managing images for an e-commerce website.</td>
+<td>Develop and maintain backend services</td>
+<td>Nodejs, DocumentDB, AWS Lambda</td>
+</tr>
+<tr>
+<td>3</td>
+<td>NGS - Contracting</td>
+<td>Team Leader</td>
+<td>5</td>
+<td>An application for managing the daily tasks of workers on a farm. It includes management of foremen and their employees, tracking what tasks they perform, and reporting through before-and-after images upon task completion.</td>
+<td>Analyze the design from Figma + FSD to create a WBS (Work Breakdown Structure) for each task. Create a backlog and assign tasks to individual team members. Develop the base structure and handle backend tasks, as well as some high-complexity client-side tasks.</td>
+<td>Nodejs, PostgresDB, React native, AWS</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Plumber - <a href="http://Unclog.it">Unclog.it</a></td>
+<td>Backend Leader</td>
+<td>11</td>
+<td>An application for booking plumbers to repair household fixtures such as pipes, toilets, sinks, etc. Payment and money transfers are managed through Stripe, which also handles the booking process.</td>
+<td>Develop and maintain backend services, integrate Stripe payment gateway</td>
+<td>NodeJS, PostgresDB, Stripe, CloudWatch, GG Map platform</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Jiffy - <a href="http://jiffy.jp">jiffy.jp</a></td>
+<td>Backend Leader</td>
+<td>9</td>
+<td>A web application that allows users to drag and drop elements to create a personal website. It enables the creation of databases for each app, the addition of internal or external APIs, and generates code in ReactJS and NodeJS.</td>
+<td>Develop and maintain backend services</td>
+<td>NodeJS, PostgresDB, ReactJS, AWS</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Company</strong>: Gotech JSC</p>
+<ul>
+<li><strong>Position</strong>: Technical Leader - Fullstack Engineer</li>
+<li><strong>Time</strong>: 1/2023 - Present</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Lead the technical team to develop and maintain the company's projects.</li>
+<li>Participate in the design and implementation of the company's projects.</li>
+<li>Work with the project manager to plan and assign tasks to the team.
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Project Name</th>
+<th>Team size</th>
+<th>Description</th>
+<th>My Responsibilities</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Polypi - <a href="http://polypi.ai">polypi.ai</a></td>
+<td>15</td>
+<td>Using AI to generate practice tests for English language exams including IELTS, TOEIC, and the high school graduation exam.</td>
+<td>Develop and maintain backend services, integrate AI models into the backend, Coding UI Screens</td>
+<td>PHP (Laravel), Vue3JS, OpenAI, Anthropic, Alepay, Speech Super, Google Text2Speech, Speech2Text, ...</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ESO Systems - <a href="http://qlnv.esoieltsmastery.edu.vn">qlnv.esoieltsmastery.edu.vn</a></td>
+<td>10</td>
+<td>An application for calculating salaries and managing sales staff across various centers within the system.</td>
+<td>Develop and maintain backend services, Calculate salary, Manage sales staff</td>
+<td>PHP (Laravel), Vue3JS, PostgresDB, AWS</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ehon Book - <a href="http://ehon-inc.jp">ehon-inc.jp</a></td>
+<td>15</td>
+<td>Using Unity to generate comic book pages with pre-defined structures created by 3D modelers, and then compiling them into PDF format to produce books that can be printed or downloaded.</td>
+<td>Develop and maintain backend services, integrate Unity into the backend</td>
+<td>NodeJs, ReactJs, Mysql, Unity, AWS</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Company</strong>: Vais - VIETNAM AI Solutions</p>
+<ul>
+<li><strong>Position</strong>: Backend Engineer</li>
+<li><strong>Time</strong>: 5/2022 - 1/2023</li>
+<li><strong>Responsibilities</strong>: - Develop and maintain backend services for the company's projects. - Participate in the design and implementation of the company's projects. - Work with the frontend team to integrate the frontend and backend. - Work with the AI team to integrate AI models into the backend.
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Project Name</th>
+<th>Team size</th>
+<th>Description</th>
+<th>My Responsibilities</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>VIONE - <a href="http://memobot.io">memobot.io</a></td>
+<td>20</td>
+<td>A speech-to-text application for Vietnamese speakers from all three regions of Vietnam.</td>
+<td>Create an API to process audio, provide general assessments, and detailed model comparisons with competitors.</td>
+<td>KoaJs, Elasticsearch, PostgresDB, VIONE AI models, CloudWatch</td>
+</tr>
+<tr>
+<td>2</td>
+<td>LAW SEARCH ENGINE</td>
+<td>10</td>
+<td>An application that crawls and collects all Vietnamese laws from websites such as <a href="http://sav.gov.vn">sav.gov.vn</a> or <a href="http://thuvienphapluat.vn">thuvienphapluat.vn</a>, etc., to create a fast law search engine using technologies like caching, Elasticsearch semantic search, and other relevant tools.</td>
+<td>Create jobs to crawl data from various sources, push it into a database and Elasticsearch. Use AI to detect content that may be relevant to the information we need to retrieve.</td>
+<td>KoaJs, Elasticsearch, PostgresDB, Pho Bert, CloudWatch</td>
+</tr>
+<tr>
+<td>3</td>
+<td>YOCAR</td>
+<td>7</td>
+<td>An application used for buying and selling used cars.</td>
+<td>Synchronize products from the store's website with the booking website. Create test drive orders, schedule test drives, and arrange maintenance appointments.</td>
+<td>NodeJs, PostgresDB, VAI AI models, CloudWatch</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Company</strong>: Vietis Corporation</p>
+<ul>
+<li><strong>Position</strong>: Internship (1 month) - Fullstack Engineer (Fulltime)</li>
+<li><strong>Time</strong>: 5/2019 - 5/2022</li>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Learn and practice software development.</li>
+<li>Participate in the company's projects.</li>
+<li>Work with the team to develop and maintain the company's projects.
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>Project Name</th>
+<th>Team size</th>
+<th>Description</th>
+<th>My Responsibilities</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Admin inventory system</td>
+<td>12</td>
+<td>Admin inventory system for a mobile phone dealer</td>
+<td>Develop and maintain services</td>
+<td>NodeJs, ReactJs, Mysql, AWS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>E-commerce website</td>
+<td>10</td>
+<td>Creation of a payment web app, chat, survey administration, etc., for major Japanese gas agents</td>
+<td>Develop and maintain services</td>
+<td>NodeJs, ReactJs, Mysql, AWS</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Affiliate marketing management</td>
+<td>10</td>
+<td>An application for managing affiliate marketing campaigns for a Japanese company</td>
+<td>Develop and maintain services</td>
+<td>Django, VueJs, Mysql, AWS</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Network diagrams</td>
+<td>5</td>
+<td>An application for drawing network diagrams using vis.js</td>
+<td>Develop and maintain services</td>
+<td>NodeJs, VueJs, Postgres, AWS</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Print App</td>
+<td>5</td>
+<td>Scan app developed in C# reads device scans and loads images, uses emucv to detect faces</td>
+<td>Develop and maintain App</td>
+<td>C#, EmguCV, Postgres</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
