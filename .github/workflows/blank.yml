@@ -4,12 +4,18 @@ on:
   push:
     paths:
       - '**.md'
+      - '**.yml'
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
 
       - name: Create output directories
         run: |
@@ -22,28 +28,42 @@ jobs:
         with:
           files: '**/*.md'
 
-      - name: Convert MD to PDF and DOCX
-        uses: docker://pandoc/core:2.9
-        with:
-          args: >-
-            ${{ steps.changed-files.outputs.all_changed_files }}
-            -o pdf/output.pdf
-            -o docx/output.docx
-            --pdf-engine=xelatex
-
-      - name: List output files
+      - name: Debug - List changed files
         run: |
-          ls -R pdf
-          ls -R docx
+          echo "Changed files:"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+
+      - name: Convert MD to PDF
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            filename=$(basename "$file" .md)
+            pandoc "$file" -o "pdf/${filename}.pdf" --pdf-engine=xelatex || echo "Failed to convert $file to PDF"
+          done
+
+      - name: Convert MD to DOCX
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            filename=$(basename "$file" .md)
+            pandoc "$file" -o "docx/${filename}.docx" || echo "Failed to convert $file to DOCX"
+          done
+
+      - name: Debug - List output files
+        run: |
+          echo "PDF directory contents:"
+          ls -l pdf
+          echo "DOCX directory contents:"
+          ls -l docx
 
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: pdf
+          if-no-files-found: warn
 
       - name: Upload DOCX artifacts
         uses: actions/upload-artifact@v2
         with:
           name: DOCX
           path: docx
+          if-no-files-found: warn
