@@ -1,0 +1,43 @@
+name: Convert Markdown to PDF and DOCX
+
+on: [push]
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create output directories
+        run: |
+          mkdir -p output/pdf
+          mkdir -p output/docx
+
+      - name: Convert MD to PDF
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: >-
+            release.md
+            -o output/pdf/output.pdf
+            --pdf-engine=xelatex
+
+      - name: Convert MD to DOCX
+        uses: docker://pandoc/core:2.9
+        with:
+          args: >-
+            release.md
+            -o output/docx/output.docx
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: output/pdf
+          if-no-files-found: warn
+
+      - name: Upload DOCX artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: DOCX
+          path: output/docx
+          if-no-files-found: warn
