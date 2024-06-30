@@ -1,22 +1,44 @@
-name: Convert Markdown
+name: Convert Markdown to PDF and DOCX
 
-on: [push]
+on:
+  push:
+    paths:
+      - '**.md'
 
 jobs:
   convert_via_pandoc:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Install Pandoc
-        run: sudo apt-get install -y pandoc
-
-      - name: Convert Markdown to PDF and DOCX
+      - name: Create output directories
         run: |
-          for file in build/*.md; do
-            filename=$(basename -- "$file")
-            filename="${filename%.*}"
-            pandoc "$file" -o "build/${filename}.pdf"
-            pandoc "$file" -o "build/${filename}.docx"
-          done
+          mkdir -p output/pdf
+          mkdir -p output/docx
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v39
+        with:
+          files: '**/*.md'
+
+      - name: Convert MD to PDF and DOCX
+        uses: docker://pandoc/core:2.9
+        with:
+          args: >-
+            ${{ steps.changed-files.outputs.all_changed_files }}
+            -o output/pdf/output.pdf
+            -o output/docx/output.docx
+            --pdf-engine=xelatex
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: output/pdf
+
+      - name: Upload DOCX artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: DOCX
+          path: output/docx
