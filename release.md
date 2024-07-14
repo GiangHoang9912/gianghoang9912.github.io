@@ -78,7 +78,7 @@
 2. **Company**: Gotech JSC
 
    - **Position**: Technical Leader - Fullstack Engineer
-   - **Time**: 1/2023 - Present
+   - **Time**: 1/2023 - 11/2023
    - **Responsibilities**:
      - Lead the technical team to develop and maintain the company's projects.
      - Participate in the design and implementation of the company's projects.
@@ -92,7 +92,7 @@
 3. **Company**: Vais - VIETNAM AI Solutions
 
    - **Position**: Backend Engineer
-   - **Time**: 5/2022 - 1/2023
+   - **Time**: 5/2022 - 1/2023 (1/2023 - 6/2023: Support part-time)
    - **Responsibilities**: - Develop and maintain backend services for the company's projects. - Participate in the design and implementation of the company's projects. - Work with the frontend team to integrate the frontend and backend. - Work with the AI team to integrate AI models into the backend.
      | No. | Project Name | Team size | Description | My Responsibilities | Technologies |
      | --- | ------------ | --------- | ----------- | ------------------- | ------------ |
