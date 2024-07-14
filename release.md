@@ -55,7 +55,10 @@
 **My Special Projects**:
 
 - **ChatPDF**: Using LLM Anthropic to embed from OpenAI GPT3.5 to generate chatbot conversations in PDF format. Using Langchain to check the content of the chatbot conversation.
+github repository: [anthropilot (private)](https://github.com/GiangHoang9912/anthropilot)
+VScode extension: [anthropilot](https://marketplace.visualstudio.com/items?itemName=gianghoang9912.anthropilot)
 - **Auto Crawl Best Product and Post to Vocal**: Using OpenAI GPT3.5 resolve captcha of amazon and crawl the best product from Amazon and using anthropic to generate content then post to Vocal.
+github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
 
 ## Experience
 
