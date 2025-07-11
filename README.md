@@ -5,7 +5,7 @@
 ## Information
 
 - **Date of birth**: 12/09/1999
-- **Address**: Tay mo, Nam Tu Lien, Hanoi, Vietnam
+- **Address**: Tay mo, Nam Tu Liem, Hanoi, Vietnam
 - **Email**:
   - [gianghoang.9955@gmail.com](mailto:gianghoang.9955@gmail.com)
 - **Phone**: 0819169868
