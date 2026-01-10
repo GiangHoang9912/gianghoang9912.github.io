@@ -73,7 +73,7 @@ github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
      - Work with the frontend team to integrate the frontend and backend.
        | No. | Project Name |Position | Team size | Description | My Responsibilities | Technologies |
        | --- | ------------ | ------- | --------- | ----------- | ------------------- | ------------ |
-       | 1 | MM+ | Backend Engineer | 7 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services | AWS, Dotnet C# (ABP Zero),  |
+       | 1 | MM+ | Backend Engineer | 7 | A comprehensive Content Management System (CMS) that enables users to create, manage, and publish digital content efficiently. The system provides features for multi-user collaboration, content versioning, role-based access control, and seamless integration with various third-party services. | Develop and maintain backend services, implement RESTful APIs, optimize database performance | AWS, Dotnet C# (ABP Zero) |
 
 2. **Company**: HOP
 
