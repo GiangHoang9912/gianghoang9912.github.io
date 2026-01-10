@@ -12,7 +12,7 @@
 
 ## Summary
 
-- I am a software engineer with 4 years of experience in software development. I have experience in developing backend services for web applications, mobile applications, and desktop applications. I have experience working with various technologies such as Nodejs, Python, PHP, ReactJS, VueJS, React Native, ElectronJS, Django, FlaskAPI, FastAPI, Laravel, YII, MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB, Docker, Kubernetes, Jenkins, GitlabCI, GithubAction, AWS, GCP, Azure, OpenAI, Anthropic, LLama, Langchain, Grafana, Prometheus, ELK, CloudWatch, Git, Jira, Confluence, Slack, Trello, Asana. I am looking for a position as a backend engineer or fullstack engineer to develop and maintain backend services for the company's projects.
+- I am a software engineer with 4 years of experience in software development. I have experience in developing backend services for web applications, mobile applications, and desktop applications. I have experience working with various technologies such as Nodejs, Python, PHP, ReactJS, VueJS, React Native, ElectronJS, Django, FlaskAPI, FastAPI, Laravel, YII, MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB, Docker, Kubernetes, Jenkins, GitlabCI, GithubAction, AWS, GCP, Azure, OpenAI, Anthropic, LLama, Langchain, Grafana, Prometheus, ELK, CloudWatch, Git, Jira, Slack, Trello, Asana. I am looking for a position as a backend engineer or fullstack engineer to develop and maintain backend services for the company's projects.
 
 ## Education
 
@@ -35,7 +35,8 @@
 | 1   | Server         | - Nodejs (ExpressJS, NestJS, KoaJS, ElectronJS)                        |
 |     |                | - Python (Django, FlaskAPI, FastAPI)                                   |
 |     |                | - PHP (Laravel, YII)                                                   |
-|     | Other Language | - Java, C#, Rust (Tauri)                                               |
+|     |                | - Dotnet C# (ABP zero)                                                 |
+|     | Other Language | - Java, Rust (Tauri)                                                   |
 | 2   | Client         | - ReactJS, VueJS, React Native                                         |
 |     |                | - HTML, CSS, Javascript                                                |
 | 3   | Database       | - MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB                  |
@@ -43,9 +44,9 @@
 | 5   | Cloud          | - AWS (EC2, S3, RDS, Lambda, API Gateway, CloudFront, ESE, DocumentDb) |
 |     |                | - GCP (Compute Engine, Cloud Storage, Google map platform)             |
 |     |                | - Azure (Virtual Machine, Blob Storage, Function App, OpenAI)          |
-| 6   | AI             | - OpenAI, Anthropic, LLama, Langchain                                  |
+| 6   | AI             | - OpenAI, Anthropic, LLama, Langchain, Vibe Code, Openspect            |
 | 7   | Monitoring     | - Grafana, Prometheus, ELK, CloudWatch                                 |
-| 8   | Others         | - Git, Jira, Confluence, Slack, Trello, Asana                          |
+| 8   | Others         | - Git, Jira, Slack, Trello, Asana                                      |
 
 **Language**:
 
@@ -62,10 +63,36 @@ github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
 
 ## Experience
 
-1. **Company**: React plus
+1. **Company**: S-Group
 
    - **Position**: Backend Engineer
-   - **Time**: 11/2023 - Present
+   - **Time**: 04/2025 - Present
+   - **Responsibilities**:
+     - Develop and maintain backend services for the company's projects.
+     - Participate in the design and implementation of the company's projects.
+     - Work with the frontend team to integrate the frontend and backend.
+       | No. | Project Name |Position | Team size | Description | My Responsibilities | Technologies |
+       | --- | ------------ | ------- | --------- | ----------- | ------------------- | ------------ |
+       | 1 | MM+ | Backend Engineer | 7 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services | AWS, Dotnet C# (ABP Zero),  |
+
+2. **Company**: HOP
+
+   - **Position**: Backend Leader
+   - **Time**: 09/2024 - 04/2025
+   - **Responsibilities**:
+     - Develop and maintain backend services for the company's projects.
+     - Participate in the design and implementation of the company's projects.
+     - Work with the frontend team to integrate the frontend and backend.
+       | No. | Project Name |Position | Team size | Description | My Responsibilities | Technologies |
+       | --- | ------------ | ------- | --------- | ----------- | ------------------- | ------------ |
+       | 2 | HLG (Human log guard) | Backend Leader | 4 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services, integrate AI models into the backend | NestJS, PostgresDB, OpenAI, CloudWatch |
+       | 3 | AI supporter | Backend Leader | 1 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services, integrate AI models into the backend | NestJS, PostgresDB, OpenAI, CloudWatch |
+
+
+3. **Company**: React plus
+
+   - **Position**: Backend Engineer
+   - **Time**: 11/2023 - 09/2024
    - **Responsibilities**:
      - Develop and maintain backend services for the company's projects.
      - Participate in the design and implementation of the company's projects.
@@ -78,7 +105,7 @@ github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
        | 4 | Plumber - Unclog.it | Backend Leader | 11 | An application for booking plumbers to repair household fixtures such as pipes, toilets, sinks, etc. Payment and money transfers are managed through Stripe, which also handles the booking process. | Develop and maintain backend services, integrate Stripe payment gateway | NodeJS, PostgresDB, Stripe, CloudWatch, GG Map platform |
        | 5 | Jiffy - jiffy.jp | Backend Leader | 9 | A web application that allows users to drag and drop elements to create a personal website. It enables the creation of databases for each app, the addition of internal or external APIs, and generates code in ReactJS and NodeJS. | Develop and maintain backend services | NodeJS, PostgresDB, ReactJS, AWS |
 
-2. **Company**: Gotech JSC
+4. **Company**: Gotech JSC
 
    - **Position**: Technical Leader - Fullstack Engineer
    - **Time**: 1/2023 - 11/2023
@@ -92,7 +119,7 @@ github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
        | 2 | ESO Systems - qlnv.esoieltsmastery.edu.vn | 10 | An application for calculating salaries and managing sales staff across various centers within the system. | Develop and maintain backend services, Calculate salary, Manage sales staff | PHP (Laravel), Vue3JS, PostgresDB, AWS |
        | 3 | Ehon Book - ehon-inc.jp | 15 | Using Unity to generate comic book pages with pre-defined structures created by 3D modelers, and then compiling them into PDF format to produce books that can be printed or downloaded. | Develop and maintain backend services, integrate Unity into the backend | NodeJs, ReactJs, Mysql, Unity, AWS |
 
-3. **Company**: Vais - VIETNAM AI Solutions
+5. **Company**: Vais - VIETNAM AI Solutions
 
    - **Position**: Backend Engineer
    - **Time**: 5/2022 - 1/2023 (1/2023 - 6/2023: Support part-time)
@@ -103,7 +130,7 @@ github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
      | 2 | LAW SEARCH ENGINE | 10 | An application that crawls and collects all Vietnamese laws from websites such as sav.gov.vn or thuvienphapluat.vn, etc., to create a fast law search engine using technologies like caching, Elasticsearch semantic search, and other relevant tools. | Create jobs to crawl data from various sources, push it into a database and Elasticsearch. Use AI to detect content that may be relevant to the information we need to retrieve. | KoaJs, Elasticsearch, PostgresDB, Pho Bert, CloudWatch |
      | 3 | YOCAR | 7 | An application used for buying and selling used cars. | Synchronize products from the store's website with the booking website. Create test drive orders, schedule test drives, and arrange maintenance appointments. | NodeJs, PostgresDB, VAI AI models, CloudWatch |
 
-4. **Company**: Vietis Corporation
+6. **Company**: Vietis Corporation
    - **Position**: Internship (1 month) - Fullstack Engineer (Fulltime)
    - **Time**: 5/2019 - 5/2022
    - **Responsibilities**:
