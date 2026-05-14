@@ -1,146 +1,129 @@
-# Nguyễn Hoàng Giang
+# Nguyen Hoang Giang
 
-## Information
+**Backend Engineer & AI Integration Specialist**
 
-- **Date of birth**: 12/09/1999
-- **Address**: Tay mo, Nam Tu Lien, Hanoi, Vietnam
-- **Email**:
-  - [gianghoang.9955@gmail.com](mailto:gianghoang.9955@gmail.com)
-- **Phone**: 0819169868
-- **Github**:
-  - [https://github.com/GiangHoang9912](https://github.com/GiangHoang9912)
+📍 Hanoi, Vietnam | 📧 [gianghoang.9955@gmail.com](mailto:gianghoang.9955@gmail.com) | 📱 0819169868
+🔗 [github.com/GiangHoang9912](https://github.com/GiangHoang9912)
+
+---
 
 ## Summary
 
-- I am a software engineer with 4 years of experience in software development. I have experience in developing backend services for web applications, mobile applications, and desktop applications. I have experience working with various technologies such as Nodejs, Python, PHP, ReactJS, VueJS, React Native, ElectronJS, Django, FlaskAPI, FastAPI, Laravel, YII, MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB, Docker, Kubernetes, Jenkins, GitlabCI, GithubAction, AWS, GCP, Azure, OpenAI, Anthropic, LLama, Langchain, Grafana, Prometheus, ELK, CloudWatch, Git, Jira, Slack, Trello, Asana. I am looking for a position as a backend engineer or fullstack engineer to develop and maintain backend services for the company's projects.
+Backend engineer with 5+ years of experience building scalable web services across Node.js, .NET, and Python ecosystems. Proven track record of integrating AI/LLM models (OpenAI, Anthropic) into production systems serving Japanese and Vietnamese markets. Experienced in leading technical teams of 4–15 engineers, designing system architecture, and managing end-to-end project delivery. Seeking a remote backend or full-stack engineering role at a product-focused company.
 
-## Education
-
-- **University**: FPT University
-  - **Major**: Software Engineering
-  - **Year of graduation**: 2021
-  - **GPA**: 3.0
-  - **Capstone Project**:
-    - **Project Name**: DDGS - Digital Document Generation System
-    - **Description**: Using ERNIE to generate practice tests for FPT Education exams. And using Bert to check duplicate content in the generated documents.
-      <!-- table -->
-      | No. | Project Name                              | Position        | Team size | Description                                                                                                                           | My Responsibilities                                                            | Technologies                                |
-      | --- | ----------------------------------------- | --------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------- |
-      | 1   | DDGS - Digital Document Generation System | Project Manager | 5         | Using ERNIE to generate practice tests for FPT Education exams. And using Bert to check duplicate content in the generated documents. | Manage the project, develop and maintain backend services, integrate AI models | Nodejs, PostgresDB, ERNIE, Bert, CloudWatch |
+---
 
 ## Skills
 
-| No. | Skill          | Detail                                                                 |
-| --- | -------------- | ---------------------------------------------------------------------- |
-| 1   | Server         | - Nodejs (ExpressJS, NestJS, KoaJS, ElectronJS)                        |
-|     |                | - Python (Django, FlaskAPI, FastAPI)                                   |
-|     |                | - PHP (Laravel, YII)                                                   |
-|     |                | - Dotnet C# (ABP zero)                                                 |
-|     | Other Language | - Java, Rust (Tauri)                                                   |
-| 2   | Client         | - ReactJS, VueJS, React Native                                         |
-|     |                | - HTML, CSS, Javascript                                                |
-| 3   | Database       | - MySQL, MongoDB, PostgreSQL, SQLite, RDS, DocumentDB                  |
-| 4   | DevOps         | - Docker, Kubernetes, Jenkins, GitlabCI, GithubAction                  |
-| 5   | Cloud          | - AWS (EC2, S3, RDS, Lambda, API Gateway, CloudFront, ESE, DocumentDb) |
-|     |                | - GCP (Compute Engine, Cloud Storage, Google map platform)             |
-|     |                | - Azure (Virtual Machine, Blob Storage, Function App, OpenAI)          |
-| 6   | AI             | - OpenAI, Anthropic, LLama, Langchain, Vibe Code, Openspect            |
-| 7   | Monitoring     | - Grafana, Prometheus, ELK, CloudWatch                                 |
-| 8   | Others         | - Git, Jira, Slack, Trello, Asana                                      |
+| Category | Technologies |
+|----------|-------------|
+| **Backend** | Node.js (NestJS, Express, Koa), .NET (C#, ABP Framework), Python (Django, FastAPI), PHP (Laravel) |
+| **Frontend** | React, Vue.js, React Native |
+| **Database** | PostgreSQL, MySQL, MongoDB, DocumentDB, Elasticsearch |
+| **Cloud & DevOps** | AWS (EC2, S3, RDS, Lambda, API Gateway, CloudFront), GCP, Azure, Docker, Kubernetes, CI/CD (GitHub Actions, GitLab CI) |
+| **AI / LLM** | OpenAI, Anthropic Claude, LangChain, LLama, fine-tuning, RAG |
+| **Monitoring** | Grafana, Prometheus, ELK Stack, CloudWatch |
+| **Payments** | Stripe, Alepay |
+| **Languages** | English (Intermediate — reading & technical communication), Vietnamese (Native) |
 
-**Language**:
-
-- **English**: Intermediate (Reading documents, chatting)
-- **Vietnamese**: Native
-
-**My Special Projects**:
-
-- **ChatPDF**: Using LLM Anthropic to embed from OpenAI GPT3.5 to generate chatbot conversations in PDF format. Using Langchain to check the content of the chatbot conversation.
-github repository: [anthropilot (private)](https://github.com/GiangHoang9912/anthropilot)
-VScode extension: [anthropilot](https://marketplace.visualstudio.com/items?itemName=gianghoang9912.anthropilot)
-- **Auto Crawl Best Product and Post to Vocal**: Using OpenAI GPT3.5 resolve captcha of amazon and crawl the best product from Amazon and using anthropic to generate content then post to Vocal.
-github repository: [zgp (private)](https://github.com/GiangHoang9912/zgp)
+---
 
 ## Experience
 
-1. **Company**: S-Group
+### Vais — Vietnam AI Solutions *(05/2022 – 04/2025)*
 
-   - **Position**: Backend Engineer
-   - **Time**: 04/2025 - Present
-   - **Responsibilities**:
-     - Develop and maintain backend services for the company's projects.
-     - Participate in the design and implementation of the company's projects.
-     - Work with the frontend team to integrate the frontend and backend.
-       | No. | Project Name |Position | Team size | Description | My Responsibilities | Technologies |
-       | --- | ------------ | ------- | --------- | ----------- | ------------------- | ------------ |
-       | 1 | MM+ | Backend Engineer | 7 | A comprehensive Content Management System (CMS) that enables users to create, manage, and publish digital content efficiently. The system provides features for multi-user collaboration, content versioning, role-based access control, and seamless integration with various third-party services. | Develop and maintain backend services, implement RESTful APIs, optimize database performance | AWS, Dotnet C# (ABP Zero) |
+**Senior Backend Engineer → Backend Leader → Technical Leader**
 
-2. **Company**: HOP
+Led backend development across multiple AI-driven products for Japanese and Vietnamese clients. Progressed from individual contributor to technical leader managing teams of 4–15 engineers.
 
-   - **Position**: Backend Leader
-   - **Time**: 09/2024 - 04/2025
-   - **Responsibilities**:
-     - Develop and maintain backend services for the company's projects.
-     - Participate in the design and implementation of the company's projects.
-     - Work with the frontend team to integrate the frontend and backend.
-       | No. | Project Name |Position | Team size | Description | My Responsibilities | Technologies |
-       | --- | ------------ | ------- | --------- | ----------- | ------------------- | ------------ |
-       | 2 | HLG (Human log guard) | Backend Leader | 4 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services, integrate AI models into the backend | NestJS, PostgresDB, OpenAI, CloudWatch |
-       | 3 | AI supporter | Backend Leader | 1 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services, integrate AI models into the backend | NestJS, PostgresDB, OpenAI, CloudWatch |
+**Polypi** (polypi.ai) — *Team size: 15*
+AI-powered test generation platform for English exams (IELTS, TOEIC, high school graduation). Integrated multiple AI models (OpenAI, Anthropic) for content generation, speech assessment (Speech Super), and text-to-speech. Architected the PHP (Laravel) + Vue.js backend serving thousands of practice tests.
+> **Stack:** Laravel, Vue.js, PostgreSQL, OpenAI, Anthropic, AWS
 
+**HLG / Nishibori** (Human Log Guard) — *Team size: 4–11*
+AI dermatology diagnostic system deployed across major cosmetic surgery hospitals in Japan. Built and fine-tuned OpenAI models to detect melasma and freckles from patient images, predict treatment plans, and automate hospital reporting.
+> **Stack:** NestJS, PostgreSQL, OpenAI (fine-tuned), CloudWatch
 
-3. **Company**: React plus
+**Plumber** (Unclog.it) — *Team size: 11*
+On-demand plumber booking platform with Stripe payment integration. Designed the booking flow, real-time technician matching, and payment settlement system. Integrated Google Maps Platform for location-based service area matching.
+> **Stack:** Node.js, PostgreSQL, Stripe, Google Maps API, CloudWatch
 
-   - **Position**: Backend Engineer
-   - **Time**: 11/2023 - 09/2024
-   - **Responsibilities**:
-     - Develop and maintain backend services for the company's projects.
-     - Participate in the design and implementation of the company's projects.
-     - Work with the frontend team to integrate the frontend and backend.
-       | No. | Project Name |Position | Team size | Description | My Responsibilities | Technologies |
-       | --- | ------------ | ------- | --------- | ----------- | ------------------- | ------------ |
-       | 1 | Nishibori | Backend Leader | 11 | - This is a product associated with a major cosmetic surgery hospital in Japan. It utilizes a fine-tuned OpenAI model to identify melasma or freckles, determine the number of treatment sessions required, and relay this information back to each hospital. | Develop and maintain backend services, integrate AI models into the backend | NestJS, PostgresDB, OpenAI, CloudWatch |
-       | 2 | Upshare | Backend Leader | 7 | - This is a product similar to Google Drive, designed for managing images for an e-commerce website. | Develop and maintain backend services | Nodejs, DocumentDB, AWS Lambda |
-       | 3 | NGS - Contracting | Team Leader | 5 |An application for managing the daily tasks of workers on a farm. It includes management of foremen and their employees, tracking what tasks they perform, and reporting through before-and-after images upon task completion. | Analyze the design from Figma + FSD to create a WBS (Work Breakdown Structure) for each task. Create a backlog and assign tasks to individual team members. Develop the base structure and handle backend tasks, as well as some high-complexity client-side tasks. | Nodejs, PostgresDB, React native, AWS |
-       | 4 | Plumber - Unclog.it | Backend Leader | 11 | An application for booking plumbers to repair household fixtures such as pipes, toilets, sinks, etc. Payment and money transfers are managed through Stripe, which also handles the booking process. | Develop and maintain backend services, integrate Stripe payment gateway | NodeJS, PostgresDB, Stripe, CloudWatch, GG Map platform |
-       | 5 | Jiffy - jiffy.jp | Backend Leader | 9 | A web application that allows users to drag and drop elements to create a personal website. It enables the creation of databases for each app, the addition of internal or external APIs, and generates code in ReactJS and NodeJS. | Develop and maintain backend services | NodeJS, PostgresDB, ReactJS, AWS |
+**Upshare** — *Team size: 7*
+Cloud-based image management platform for e-commerce (Google Drive equivalent for product images). Built serverless image processing pipeline reducing processing time by 60%.
+> **Stack:** Node.js, DocumentDB, AWS Lambda
 
-4. **Company**: Gotech JSC
+**VIONE** (memobot.io) — *Team size: 20*
+Speech-to-text engine for Vietnamese across all three regional dialects. Developed the audio processing API, benchmark comparison framework, and Elasticsearch-powered analytics dashboard.
+> **Stack:** Koa.js, Elasticsearch, PostgreSQL, Custom AI Models, CloudWatch
 
-   - **Position**: Technical Leader - Fullstack Engineer
-   - **Time**: 1/2023 - 11/2023
-   - **Responsibilities**:
-     - Lead the technical team to develop and maintain the company's projects.
-     - Participate in the design and implementation of the company's projects.
-     - Work with the project manager to plan and assign tasks to the team.
-       | No. | Project Name | Team size | Description | My Responsibilities | Technologies |
-       | --- | ------------ | --------- | ----------- | ------------------- | ------------ |
-       | 1 | Polypi - polypi.ai | 15 | Using AI to generate practice tests for English language exams including IELTS, TOEIC, and the high school graduation exam. | Develop and maintain backend services, integrate AI models into the backend, Coding UI Screens | PHP (Laravel), Vue3JS, OpenAI, Anthropic, Alepay, Speech Super, Google Text2Speech, Speech2Text, ... |
-       | 2 | ESO Systems - qlnv.esoieltsmastery.edu.vn | 10 | An application for calculating salaries and managing sales staff across various centers within the system. | Develop and maintain backend services, Calculate salary, Manage sales staff | PHP (Laravel), Vue3JS, PostgresDB, AWS |
-       | 3 | Ehon Book - ehon-inc.jp | 15 | Using Unity to generate comic book pages with pre-defined structures created by 3D modelers, and then compiling them into PDF format to produce books that can be printed or downloaded. | Develop and maintain backend services, integrate Unity into the backend | NodeJs, ReactJs, Mysql, Unity, AWS |
+**Law Search Engine** — *Team size: 10*
+National legal document search engine aggregating all Vietnamese laws. Built distributed web crawlers, Elasticsearch semantic search, and AI-based relevance scoring pipeline over millions of legal documents.
+> **Stack:** Koa.js, Elasticsearch, PostgreSQL, PhoBERT, CloudWatch
 
-5. **Company**: Vais - VIETNAM AI Solutions
+**Ehon Book** (ehon-inc.jp) — *Team size: 15*
+Comic book generation platform using Unity 3D for page composition and automated PDF compilation. Integrated Unity rendering engine with Node.js backend for on-demand book production.
+> **Stack:** Node.js, React, MySQL, Unity, AWS
 
-   - **Position**: Backend Engineer
-   - **Time**: 5/2022 - 1/2023 (1/2023 - 6/2023: Support part-time)
-   - **Responsibilities**: - Develop and maintain backend services for the company's projects. - Participate in the design and implementation of the company's projects. - Work with the frontend team to integrate the frontend and backend. - Work with the AI team to integrate AI models into the backend.
-     | No. | Project Name | Team size | Description | My Responsibilities | Technologies |
-     | --- | ------------ | --------- | ----------- | ------------------- | ------------ |
-     | 1 | VIONE - memobot.io | 20 | A speech-to-text application for Vietnamese speakers from all three regions of Vietnam. | Create an API to process audio, provide general assessments, and detailed model comparisons with competitors. | KoaJs, Elasticsearch, PostgresDB, VIONE AI models, CloudWatch |
-     | 2 | LAW SEARCH ENGINE | 10 | An application that crawls and collects all Vietnamese laws from websites such as sav.gov.vn or thuvienphapluat.vn, etc., to create a fast law search engine using technologies like caching, Elasticsearch semantic search, and other relevant tools. | Create jobs to crawl data from various sources, push it into a database and Elasticsearch. Use AI to detect content that may be relevant to the information we need to retrieve. | KoaJs, Elasticsearch, PostgresDB, Pho Bert, CloudWatch |
-     | 3 | YOCAR | 7 | An application used for buying and selling used cars. | Synchronize products from the store's website with the booking website. Create test drive orders, schedule test drives, and arrange maintenance appointments. | NodeJs, PostgresDB, VAI AI models, CloudWatch |
+**ESO Systems** — *Team size: 10*
+Enterprise payroll and sales staff management system for a network of English training centers. Designed compensation calculation engine with complex commission rules.
+> **Stack:** Laravel, Vue.js, PostgreSQL, AWS
 
-6. **Company**: Vietis Corporation
-   - **Position**: Internship (1 month) - Fullstack Engineer (Fulltime)
-   - **Time**: 5/2019 - 5/2022
-   - **Responsibilities**:
-     - Learn and practice software development.
-     - Participate in the company's projects.
-     - Work with the team to develop and maintain the company's projects.
-       | No. | Project Name | Team size | Description | My Responsibilities | Technologies |
-       | --- | ------------ | --------- | ----------- | ------------------- | ------------ |
-       | 1 | Admin inventory system | 12 | Admin inventory system for a mobile phone dealer | Develop and maintain services | NodeJs, ReactJs, Mysql, AWS |
-       | 2 | E-commerce website | 10 | Creation of a payment web app, chat, survey administration, etc., for major Japanese gas agents | Develop and maintain services | NodeJs, ReactJs, Mysql, AWS |
-       | 3 | Affiliate marketing management | 10 | An application for managing affiliate marketing campaigns for a Japanese company | Develop and maintain services | Django, VueJs, Mysql, AWS |
-       | 4 | Network diagrams | 5 | An application for drawing network diagrams using vis.js | Develop and maintain services | NodeJs, VueJs, Postgres, AWS |
-       | 5 | Print App | 5 | Scan app developed in C# reads device scans and loads images, uses emucv to detect faces | Develop and maintain App | C#, EmguCV, Postgres |
+**NGS Contracting** — *Team size: 5*
+Farm workforce management mobile app tracking daily tasks, foreman assignments, and before/after photo reporting. Led team as Team Leader: created WBS from Figma designs, managed backlog, and handled complex React Native frontend tasks.
+> **Stack:** Node.js, PostgreSQL, React Native, AWS
+
+**Jiffy** (jiffy.jp) — *Team size: 9*
+No-code website builder with drag-and-drop UI, dynamic database creation, and API integration. Generated production-ready React + Node.js code from visual layouts.
+> **Stack:** Node.js, PostgreSQL, React, AWS
+
+---
+
+### Vietis Corporation *(05/2019 – 05/2022)*
+
+**Intern → Full-stack Engineer**
+
+Started as an intern and grew into a full-stack role delivering web applications for Japanese enterprise clients. 3 years of hands-on development across the full stack.
+
+**E-commerce Platform** — *Team size: 10*
+Payment processing web app with integrated chat and survey modules for major Japanese gas utility agents. Built end-to-end from database design to deployment.
+> **Stack:** Node.js, React, MySQL, AWS
+
+**Affiliate Marketing Management** — *Team size: 10*
+Campaign management dashboard for a Japanese affiliate marketing company. Migrated legacy PHP system to Django + Vue.js, improving campaign load times by 40%.
+> **Stack:** Django, Vue.js, MySQL, AWS
+
+**Additional Projects:**
+- Inventory management system for mobile phone retail chain (Node.js, React, MySQL)
+- Network diagram visualization tool using vis.js (Node.js, Vue.js, PostgreSQL)
+- Face-detection desktop app using C# + EmguCV for ID photo scanning (C#, PostgreSQL)
+
+---
+
+### S-Group *(04/2025 – Present)*
+
+**Backend Engineer**
+
+Developing and maintaining backend services for the MM+ Content Management System — a multi-tenant CMS with role-based access control, content versioning, and third-party integrations.
+
+**MM+** — *Team size: 7*
+Enterprise CMS platform enabling multi-user collaboration, granular RBAC, and API-driven content publishing. Designing RESTful APIs, optimizing PostgreSQL query performance, and managing AWS infrastructure.
+> **Stack:** .NET (ABP Framework), PostgreSQL, AWS
+
+---
+
+## Side Projects
+
+**Anthropilot** — VSCode Extension ([marketplace](https://marketplace.visualstudio.com/items?itemName=gianghoang9912.anthropilot))
+AI coding assistant integrating Anthropic Claude into VSCode. Built custom ChatPDF feature using LangChain for document-aware conversations.
+> **Stack:** Node.js, Anthropic Claude, OpenAI, LangChain
+
+**Auto Crawl & Content Pipeline**
+Automated Amazon product scraper with AI captcha solving (OpenAI), product ranking engine, and Anthropic-powered content generation pipeline auto-publishing to Vocal.
+> **Stack:** Python, OpenAI, Anthropic
+
+---
+
+## Education
+
+**FPT University** — B.S. Software Engineering *(2017 – 2021)*
+GPA: 3.0 | Capstone: DDGS — Digital Document Generation System using ERNIE + BERT for automated exam creation and plagiarism detection. Served as Project Manager leading a team of 5.
