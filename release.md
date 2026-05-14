@@ -103,11 +103,15 @@ Campaign management dashboard for a Japanese affiliate marketing company. Migrat
 
 **Backend Engineer**
 
-Developing and maintaining backend services for the MM+ Content Management System — a multi-tenant CMS with role-based access control, content versioning, and third-party integrations.
+Building and maintaining backend services across multiple products. Onsite deployment and integration in Kuala Lumpur, Malaysia.
 
 **MM+** — *Team size: 7*
-Enterprise CMS platform enabling multi-user collaboration, granular RBAC, and API-driven content publishing. Designing RESTful APIs, optimizing PostgreSQL query performance, and managing AWS infrastructure.
+Enterprise CMS platform enabling multi-user collaboration, granular RBAC, and API-driven content publishing. Designed RESTful APIs, optimized PostgreSQL query performance, and managed AWS infrastructure.
 > **Stack:** .NET (ABP Framework), PostgreSQL, AWS
+
+**Payment Gateway Hub** — *Team size: 5*
+Multi-payment aggregator integrating multiple payment providers (crypto USDT, bank transfers, e-wallets) into a unified API. Built with Clean Architecture on .NET 10 + ABP Framework, supporting 19-language i18n. Designed atomic wallet balance operations via PostgreSQL stored functions and Redis distributed locking for concurrency.
+> **Stack:** .NET (ABP Framework), PostgreSQL, Redis, Docker
 
 ---
 
