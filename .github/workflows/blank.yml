@@ -30,7 +30,7 @@ jobs:
             -o release.html \
             --standalone \
             --metadata title="Nguyen Hoang Giang — CV" \
-            --css=https://cdn.jsdelivr.net/npm/water.css@2/out/water.css
+            -H cv-style.css
 
       - name: Build PDF
         run: |

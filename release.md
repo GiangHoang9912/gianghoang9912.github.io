@@ -127,4 +127,3 @@ Automated Amazon product scraper with AI captcha solving (OpenAI), product ranki
 
 **FPT University** — B.S. Software Engineering *(2017 – 2021)*
 GPA: 3.0 | Capstone: DDGS — Digital Document Generation System using ERNIE + BERT for automated exam creation and plagiarism detection. Served as Project Manager leading a team of 5.
-
