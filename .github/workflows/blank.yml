@@ -1,43 +1,60 @@
-name: Convert Markdown to PDF and DOCX
+name: Build CV
 
-on: [push]
+on:
+  push:
+    paths:
+      - release.md
+
+concurrency:
+  group: cv-build
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-  convert_via_pandoc:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Create output directories
+      - name: Install pandoc & texlive
         run: |
-          mkdir -p output/pdf
-          mkdir -p output/docx
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra
 
-      - name: Convert MD to PDF
-        uses: docker://pandoc/latex:2.9
-        with:
-          args: >-
-            release.md
-            -o output/pdf/output.pdf
-            --pdf-engine=xelatex
+      - name: Build HTML
+        run: |
+          pandoc release.md \
+            -o release.html \
+            --standalone \
+            --metadata title="Nguyen Hoang Giang — CV" \
+            --css=https://cdn.jsdelivr.net/npm/water.css@2/out/water.css
 
-      - name: Convert MD to DOCX
-        uses: docker://pandoc/core:2.9
-        with:
-          args: >-
-            release.md
-            -o output/docx/output.docx
+      - name: Build PDF
+        run: |
+          pandoc release.md \
+            -o release.pdf \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V mainfont="DejaVu Sans" \
+            -V monofont="DejaVu Sans Mono"
 
-      - name: Upload PDF artifacts
+      - name: Build DOCX
+        run: pandoc release.md -o release.docx
+
+      - name: Commit HTML & PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add release.html release.pdf
+          git diff --staged --quiet || git commit -m "Build CV from release.md"
+          git push
+
+      - name: Upload DOCX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PDF
-          path: output/pdf
-          if-no-files-found: warn
-
-      - name: Upload DOCX artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: DOCX
-          path: output/docx
+          name: CV-DOCX
+          path: release.docx
           if-no-files-found: warn
