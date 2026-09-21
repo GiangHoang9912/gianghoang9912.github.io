@@ -36,6 +36,12 @@ Backend engineer with 5+ years of experience building scalable web services acro
 
 Building and maintaining backend services across multiple products. Onsite deployment and integration in Kuala Lumpur, Malaysia.
 
+**AlphaSensei**
+Product developed at Cypher AI.
+
+**OpenBI**
+Self-service business intelligence platform: build-your-own dashboards, filters, and charts as an open alternative to Metabase. Validated filter and aggregation behavior against a live Metabase instance on e-commerce analytics datasets.
+
 **MM+** — *Team size: 7*
 Enterprise CMS platform enabling multi-user collaboration, granular RBAC, and API-driven content publishing. Designed RESTful APIs, optimized PostgreSQL query performance, and managed AWS infrastructure.
 > **Stack:** .NET (ABP Framework), PostgreSQL, AWS
