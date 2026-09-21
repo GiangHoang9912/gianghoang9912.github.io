@@ -30,6 +30,22 @@ Backend engineer with 5+ years of experience building scalable web services acro
 
 ## Experience
 
+### Cypher AI *(04/2025 – Present)*
+
+**Senior Full Stack AI Engineer**
+
+Building and maintaining backend services across multiple products. Onsite deployment and integration in Kuala Lumpur, Malaysia.
+
+**MM+** — *Team size: 7*
+Enterprise CMS platform enabling multi-user collaboration, granular RBAC, and API-driven content publishing. Designed RESTful APIs, optimized PostgreSQL query performance, and managed AWS infrastructure.
+> **Stack:** .NET (ABP Framework), PostgreSQL, AWS
+
+**Payment Gateway Hub** — *Team size: 5*
+Multi-payment aggregator integrating multiple payment providers (crypto USDT, bank transfers, e-wallets) into a unified API. Built with Clean Architecture on .NET 10 + ABP Framework, supporting 19-language i18n. Designed atomic wallet balance operations via PostgreSQL stored functions and Redis distributed locking for concurrency.
+> **Stack:** .NET (ABP Framework), PostgreSQL, Redis, Docker
+
+---
+
 ### Vais — Vietnam AI Solutions *(05/2022 – 04/2025)*
 
 **Senior Backend Engineer → Backend Leader → Technical Leader**
@@ -96,22 +112,6 @@ Campaign management dashboard for a Japanese affiliate marketing company. Migrat
 - Inventory management system for mobile phone retail chain (Node.js, React, MySQL)
 - Network diagram visualization tool using vis.js (Node.js, Vue.js, PostgreSQL)
 - Face-detection desktop app using C# + EmguCV for ID photo scanning (C#, PostgreSQL)
-
----
-
-### S-Group *(04/2025 – Present)*
-
-**Backend Engineer**
-
-Building and maintaining backend services across multiple products. Onsite deployment and integration in Kuala Lumpur, Malaysia.
-
-**MM+** — *Team size: 7*
-Enterprise CMS platform enabling multi-user collaboration, granular RBAC, and API-driven content publishing. Designed RESTful APIs, optimized PostgreSQL query performance, and managed AWS infrastructure.
-> **Stack:** .NET (ABP Framework), PostgreSQL, AWS
-
-**Payment Gateway Hub** — *Team size: 5*
-Multi-payment aggregator integrating multiple payment providers (crypto USDT, bank transfers, e-wallets) into a unified API. Built with Clean Architecture on .NET 10 + ABP Framework, supporting 19-language i18n. Designed atomic wallet balance operations via PostgreSQL stored functions and Redis distributed locking for concurrency.
-> **Stack:** .NET (ABP Framework), PostgreSQL, Redis, Docker
 
 ---
 
